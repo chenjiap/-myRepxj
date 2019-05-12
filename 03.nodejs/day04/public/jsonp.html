@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  /*const script = document.createElement('script')
+  script.src = 'http://localhost:3002/jsonp?callback=getData'
+  function getData(data) {
+    document.getElementById('box').innerHTML=data
+    console.log(data)
+	}
+	document.body.appendChild(script)*/
+ $.getJSON('http://localhost:3002/jsonp?callback=?',function (data) {
+   console.log(data)
+ })
+
+
+</script>
+
+</body>
+</html>

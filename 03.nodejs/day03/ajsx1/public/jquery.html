@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  /*$('#btn').click(function () {
+    $.ajax({
+      url:'http://localhost:3002',
+      method:'GET',
+      data:{
+        username:'abao',
+        age:22
+      },
+      headers:{
+        xxx:'xxx'
+      },
+      success(data){
+        console.log(data)
+      },
+      error(error){
+        console.log(error)
+      }
+
+
+
+    })
+
+  })*/
+  $.get('/',{username:'xiaohong',age:25},function (data) {
+    console.log(data)
+  })
+  $.post('/',{username:'daxiong',age:33},function (data) {
+    console.log(data)
+  })
+</script>
+</body>
+</html>

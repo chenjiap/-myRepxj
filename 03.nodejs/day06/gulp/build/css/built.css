@@ -1,0 +1,19 @@
+#box1 {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}
+#box1 p {
+  font-size: 20px;
+  color: #528CE0;
+}
+
+#box2 {
+  width: 200px;
+  height: 200px;
+}
+#box2 p {
+  font-size: 25px;
+  color: #710909;
+  background-color: yellow;
+}

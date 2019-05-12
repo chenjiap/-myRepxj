@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>注册</h1>
+<form action="http://localhost:3001/register" method="post">
+    用户名：<input type="text" name="username" value="<%=username%>" ><span class="color"><%=errMessage.userErr%></span><br>
+    密码：<input type="password" name="password" ><span class="color"><%=errMessage.passwordErr%></span><br>
+    确认密码：<input type="password" name="repassword" ><span class="color"><%=errMessage.repasswordErr%></span><br>
+    邮箱：<input type="text" name="email" value="<%=email%>" ><span class="color"><%=errMessage.emailErr%></span><br>
+   <input type="submit" value="注册">
+</form>
+</body>
+</html>

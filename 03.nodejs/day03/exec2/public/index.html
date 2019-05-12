@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>三级联动</title>
+</head>
+<body>
+<select id="province">
+  <option>
+    请选择省份
+  </option>
+</select>省
+<select id="city">
+  <option>
+    请选择市
+  </option>
+</select>市
+<select id="county">
+  <option>
+    请选择区
+  </option>
+</select>区
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  $(function () {
+    const $province = $('#province')
+    const $city = $('#city')
+    const $county = $('#county')
+    $.get('/province', function (result) {
+      if (result.code === 0) {
+        const html = result.data.reduce((pre, curr) => pre + `<option value="${curr.province}">${curr.name}</option>`, '')
+        $province.append(html)
+
+      } else alert(result.err)
+
+    })
+    $province.change(function () {
+      const province = this.value
+      $.get('/city', {province}, function (result) {
+        if (result.code === 0) {
+          const html = result.data.reduce((prev, curr) => {
+            return prev + `<option value="${curr.city}" >${curr.name}</option>`
+          }, '<option>请选择市</option>')
+          $city.html(html)
+          $county.html('<option>请选择县</option>')
+        } else alert(result.err)
+
+
+      })
+
+
+    })
+
+    $city.change(function () {
+      const province = $province.val()
+      console.log(province)
+      const city = this.value
+console.log(city)
+      $.get('/county', {province, city}, function (result) {
+        if (result.code === 0) {
+          const html = result.data.reduce((prev, curr) => {return prev + `<option>${curr.name}</option>`
+          }, '<option>请选择县</option>')
+          $county.html(html)
+          console.log(result)
+          console.log(html)
+        } else {
+          alert(result.err)
+        }
+      })
+    })
+
+  })
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

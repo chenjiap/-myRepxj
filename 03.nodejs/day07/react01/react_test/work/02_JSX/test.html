@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSX</title>
+
+</head>
+<body>
+  <div id="test1"></div>
+  <div id="test2"></div>
+
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript">
+    const vDom2 = React.createElement('span',null,'i hate you')
+    const vDom3 = React.createElement('h1',{id:'myId2',className:'myClass2'},vDom2)
+    ReactDOM.render(vDom3,document.getElementById('test2'))
+
+  </script>
+
+
+
+
+
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel">
+    const id = 'myId1'
+    const content = 'i like you'
+    const vDom1 = <h1 id={id} className="myClass1"><span>{content}</span></h1>
+    ReactDOM.render(vDom1,document.getElementById('test1'))
+
+    const arr = ['hello','react']
+
+
+
+
+  </script>
+
+</body>
+</html>

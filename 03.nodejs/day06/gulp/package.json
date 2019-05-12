@@ -1,0 +1,45 @@
+{
+  "name": "gulp_cjp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp dev",
+    "dev": "gulp dev",
+    "build":"gulp prod",
+    "dist":"gulp prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "open": "^6.2.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}
